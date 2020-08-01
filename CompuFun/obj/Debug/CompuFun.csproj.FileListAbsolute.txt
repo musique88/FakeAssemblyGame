@@ -1,0 +1,6 @@
+/home/musique88/RiderProjects/CompuFun/CompuFun/obj/Debug/CompuFun.csprojAssemblyReference.cache
+/home/musique88/RiderProjects/CompuFun/CompuFun/obj/Debug/CompuFun.csproj.CoreCompileInputs.cache
+/home/musique88/RiderProjects/CompuFun/CompuFun/bin/Debug/CompuFun.exe
+/home/musique88/RiderProjects/CompuFun/CompuFun/bin/Debug/CompuFun.pdb
+/home/musique88/RiderProjects/CompuFun/CompuFun/obj/Debug/CompuFun.exe
+/home/musique88/RiderProjects/CompuFun/CompuFun/obj/Debug/CompuFun.pdb
