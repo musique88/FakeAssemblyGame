@@ -4,3 +4,9 @@
 /home/musique88/RiderProjects/CompuFun/CompuFun/bin/Debug/CompuFun.pdb
 /home/musique88/RiderProjects/CompuFun/CompuFun/obj/Debug/CompuFun.exe
 /home/musique88/RiderProjects/CompuFun/CompuFun/obj/Debug/CompuFun.pdb
+C:\Users\Will\Desktop\Projects\FakeAssemblyGame\CompuFun\bin\Debug\CompuFun.exe
+C:\Users\Will\Desktop\Projects\FakeAssemblyGame\CompuFun\bin\Debug\CompuFun.pdb
+C:\Users\Will\Desktop\Projects\FakeAssemblyGame\CompuFun\obj\Debug\CompuFun.csprojAssemblyReference.cache
+C:\Users\Will\Desktop\Projects\FakeAssemblyGame\CompuFun\obj\Debug\CompuFun.csproj.CoreCompileInputs.cache
+C:\Users\Will\Desktop\Projects\FakeAssemblyGame\CompuFun\obj\Debug\CompuFun.exe
+C:\Users\Will\Desktop\Projects\FakeAssemblyGame\CompuFun\obj\Debug\CompuFun.pdb

@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Security.Permissions;
 
 namespace CompuFun
@@ -7,7 +8,8 @@ namespace CompuFun
     {
         public static void Main(string[] args)
         {
-            Preprocessor.Do(File.ReadAllText("/home/musique88/RiderProjects/CompuFun/CompuFun/Example.asm"));
+            AssemblyInformation assemblyInformation = Preprocessor.Do(File.ReadAllText("../../Example.asm"));
+            ByteCode[] byteCodes = Assemble.Do(assemblyInformation);
         }
     }
 }

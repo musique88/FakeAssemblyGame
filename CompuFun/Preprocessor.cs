@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace CompuFun
@@ -111,6 +112,8 @@ namespace CompuFun
                     }
             }
 
+            assemblyInformation.Instructions = instructions;
+
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < instructions.Length; i++)
             {
@@ -123,6 +126,8 @@ namespace CompuFun
             return assemblyInformation;
         }
 
+
+
         private static ushort toUshort(string input)
         {
             if (input.StartsWith("0x"))
@@ -132,6 +137,18 @@ namespace CompuFun
             return UInt16.Parse(input);
         }
     }
+    
+    public static class Assemble
+    {
+        public static ByteCode[] Do(AssemblyInformation assemblyInformation)
+        {
+            ByteCode[] byteCodes = new ByteCode[assemblyInformation.Instructions.Length];
+            for (int i = 0; i < byteCodes.Length; i++)
+                byteCodes[i] = assemblyInformation.Instructions[i].toByteCode();
+            return byteCodes;
+        }
+    }
+    
 
     public struct AssemblyInformation
     {
@@ -144,7 +161,7 @@ namespace CompuFun
     public struct Instruction
     {
         public Instructions instruction;
-        public ushort? argument;
+        public ushort argument;
         public override string ToString()
         {
             string s = "";
@@ -160,8 +177,25 @@ namespace CompuFun
                     }
                 }
             }
-
             return s;
+        }
+
+        public ByteCode toByteCode()
+        {
+            ByteCode b;
+            b.instruction = (byte) instruction;
+            b.argument = argument;
+            return b;
+        }
+    }
+
+    public struct ByteCode
+    {
+        public byte instruction;
+        public ushort argument;
+        public string ToString(int toBase = 2)
+        {
+            return Convert.ToString(instruction, toBase) + ' ' + Convert.ToString(argument, toBase);
         }
     }
 }
