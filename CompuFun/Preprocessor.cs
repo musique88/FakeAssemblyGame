@@ -1,9 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System.Text;
 
 namespace CompuFun
@@ -13,8 +9,7 @@ namespace CompuFun
         JUMP, SET, GET, SWAP, 
         STORE_A, DECREASE_X, 
         POP, PUSH, GET_PROGRAM_COUNTER,
-        SET_PROGRAM_COUNTER,
-        RESET_FLAGS, CHECK_FLAGS,
+        SET_PROGRAM_COUNTER, CHECK_FLAGS,
         ADD, SUB
     }
 
@@ -39,26 +34,16 @@ namespace CompuFun
                 {"pop", Instructions.POP},
                 //push a into stack
                 {"psh", Instructions.PUSH},
-                //get program counter in a
+                //get program counter in a and x
                 {"gpc", Instructions.GET_PROGRAM_COUNTER},
-                //set program counter from a
+                //set program counter from a and x
                 {"spc", Instructions.SET_PROGRAM_COUNTER},
-                /*reset flags
-                flags     00000000
-                          ||||||||
-                          |||||||
-                          ||||||
-                          |||||
-                          ||||
-                          |||
-                          ||is x == 0
-                          |has a rollback happened to a ?
-                          is a == 0
-                */
-                {"rst", Instructions.RESET_FLAGS},
-                //check flags: skips next line if any of the checked flags arent also true
-                //ex: f: 0b10001111 against 0b10000000; next line will be evaluated
-                //ex: f: 0b10001111 against 0b11000000; next line will be skipped
+                //check flags: skips the next line if flag at argument position is not set
+                /*     flag: ax000000
+                 *
+                 *     a : if a is 0
+                 *     x : if x is 0
+                 */
                 {"cfl", Instructions.CHECK_FLAGS},
                 //performs a+=x and sets appropriate flags
                 {"add", Instructions.ADD},

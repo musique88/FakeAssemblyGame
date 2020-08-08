@@ -1,6 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Security.Permissions;
+﻿using System.IO;
 
 namespace CompuFun
 {
@@ -10,6 +8,8 @@ namespace CompuFun
         {
             AssemblyInformation assemblyInformation = Preprocessor.Do(File.ReadAllText("../../Example.asm"));
             ByteCode[] byteCodes = Assemble.Do(assemblyInformation);
+
+            
         }
     }
 }
